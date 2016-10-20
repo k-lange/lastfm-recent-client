@@ -10,10 +10,8 @@
 
 .title {
     font-size: 20px;
-    line-height: 25px;
 }
 
-.subtitle {
+.subtitle, .date {
     font-size: 16px;
-    line-height: 25px;
 }

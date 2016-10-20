@@ -1,0 +1,19 @@
+.track {
+    display: flex;
+    align-items: center;
+}
+
+.cover {
+    width: 20%;
+    margin-right: 2%;
+}
+
+.title {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.subtitle {
+    font-size: 16px;
+    line-height: 25px;
+}

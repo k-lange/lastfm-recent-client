@@ -41,11 +41,11 @@
 
 .album {
     font-style: italic;
+    padding-right: 1vw;
 }
 
 .date {
     white-space: nowrap;
-    margin-left: 1.5%;
 }
 
 .background {

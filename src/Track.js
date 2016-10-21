@@ -8,11 +8,16 @@ export default pure(Track);
 function Track({ track }) {
     return (
         <li className="track">
-            <img src={track.cover} alt="album cover" className="cover" />
-            <div>
-                <div className="title">{ track.title }</div>
-                <div className="subtitle">{ track.artist } – { track.album }</div>
-                <div className="date"><TimeAgo date={track.date} /></div>
+            <div className="background" style={{ backgroundImage: `url(${track.cover})` }} />
+            <img className="cover" src={track.cover} alt="album cover" />
+            <div className="meta">
+                <div className="title shorten">{ track.title }</div>
+                <div className="subtitle">
+                    <div className="shorten">
+                        <span className="artist">{ track.artist }</span> – <span className="album">{ track.album }</span>
+                    </div>
+                    <div className="date"><TimeAgo date={track.date} /></div>
+                </div>
             </div>
         </li>
     );

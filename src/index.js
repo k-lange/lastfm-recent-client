@@ -8,6 +8,7 @@ import './index.css';
 const socket = socketIo(process.env.REACT_APP_WS_HOST);
 const domNode = document.getElementById('root');
 let tracks = [];
+let nowPlaying;
 
 socket.on('tracks', newTracks => {
     tracks = flow(
@@ -17,8 +18,18 @@ socket.on('tracks', newTracks => {
         reverse
     )(newTracks);
 
+    render();
+});
+
+socket.on('now', newNowPlaying => {
+    nowPlaying = newNowPlaying;
+
+    render();
+});
+
+function render() {
     ReactDOM.render(
-        <Tracks tracks={tracks} />,
+        <Tracks tracks={tracks} nowPlaying={nowPlaying} />,
         domNode
     );
-});
+}

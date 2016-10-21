@@ -16,7 +16,12 @@ function Track({ track }) {
                     <div className="shorten">
                         <span className="artist">{ track.artist }</span> – <span className="album">{ track.album }</span>
                     </div>
-                    <div className="date"><TimeAgo date={track.date} /></div>
+                    <div className="date">
+                        { track.date ?
+                            <TimeAgo date={track.date} /> :
+                            <span className="now">Playing Now</span>
+                        }
+                    </div>
                 </div>
             </div>
         </li>
